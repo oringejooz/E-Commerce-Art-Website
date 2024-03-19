@@ -51,3 +51,57 @@ p {
 body {
   width: 100%;
 }
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.06);
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#navbar li{
+    padding: 0px 20px;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(50, 50, 223);
+}
+
+#navbar li a:hover{
+    cursor: pointer;
+    color: rgb(221, 36, 221);
+}
+
+#navbar li a.active{
+    color: rgb(221, 36, 221);
+}
+
+#navbar li a.active::after{
+    content: "";
+    width: 25px;
+    height: 2px;
+    background: rgb(221, 36, 221);
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#hero{
+    background-image: url("C:\Users\laugh\OneDrive\Documents\E-Commerce-Art-Website\Images\Home\hero-removebg-preview.png");
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+}
