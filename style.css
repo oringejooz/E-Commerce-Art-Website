@@ -56,9 +56,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 80px;
+    padding: 20px 60px;
     background: rgb(255, 255, 255);
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.06);
+    box-shadow: 0px 5px 15px rgba(13, 24, 67, 0.06);
+
 }
 
 #navbar{
@@ -99,7 +100,7 @@ body {
 }
 
 #hero{
-    background-image: url("Images/Home/hero_.png");
+    background-image: url("Images/Home/bg_hero.jpg");
     height: 110vh;
     width: 100%;
     background-size: cover;
@@ -142,8 +143,92 @@ body {
 #hero h4{
     padding-bottom: 30px;
     color: rgb(42, 18, 135);
-    font-family: "fantasy";
     
+
 }
 
+#hero p{
+  color: blueviolet;
+}
 
+#feature{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#feature .fe-box{
+  width: 180px;
+  text-align: center;
+  padding: 25px 25px;
+  box-shadow: 20px 20px 20px rgba(90, 74, 184, 0.3);
+  border: 1px solid rgb(95, 109, 187);
+  margin: 15px 0;
+  border-radius: 10px;
+}
+
+#feature .fe-box:hover{
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(139, 127, 208, 0.3);
+  border: 1px solid rgb(142, 150, 194);
+}
+
+#feature .fe-box:active{
+  box-shadow: none;
+}
+
+#feature .fe-box h5{
+  padding: 9px 8px 6px 8px;
+  line-height: 1;
+  border-radius: 15px;
+  color: rgb(240, 239, 246);
+  background-color: rgb(117, 130, 198);
+}
+
+#feature .fe-box img{
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#product1{
+  text-align: center;
+}
+
+#product1 .pro{
+  width: 23%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #cce7d0;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 20px 20px 20px rgba(0,0,0,0.2);
+  margin: 15px 0;
+  transition: 0.2 ease;
+}
+
+#product1 .pro:hover{
+  box-shadow: 20px 20px 20px rgba(0,0,0,0.4);
+}
+
+#product1 .pro img{
+  width: 100%;
+  border-radius: 20px;
+}
+
+#product1 .pro .des{
+  text-align: start;
+  padding: 10px 0;
+}
+
+#product1 .pro .des span{
+  color: rgb(60, 45, 173);
+  font-size: 12px;
+
+}
+
+#product1 .pro .des h5{
+  padding-top: 7px;
+  color: #050c2c;
+  font-size: 14px;
+}
