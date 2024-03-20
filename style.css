@@ -112,3 +112,38 @@ body {
     justify-content: center;
     
 }
+
+#hero button{
+    color: white;
+    background-color: rgb(42, 18, 135);
+    height: 50px;
+    width: 120px;
+    border: none;
+    border-radius: 25px;
+    font-family: monospace;
+    font-size: larger;
+}
+
+#hero button:hover{
+    cursor: pointer;
+    color: rgb(221, 36, 221);
+    opacity: 0.6;
+}
+
+#hero button:active{
+    background-color: rgb(221, 36, 221);
+    color: wheat;
+}
+
+#hero h1{
+    color: rgb(168, 28, 168);   
+}
+
+#hero h4{
+    padding-bottom: 30px;
+    color: rgb(42, 18, 135);
+    font-family: "fantasy";
+    
+}
+
+
