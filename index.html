@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="summerApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SummerTime Blues</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="stylesheet" href="style.css">
-
     <script src="https://kit.fontawesome.com/e47a89adbe.js" crossorigin="anonymous"></script>
-    
 </head>
-<body>
+<body ng-controller="MainController">
+    <!-- Header Section -->
     <section id="header">
-        <a href="#"><img src="Images\Logo\BLUE (1).png" class="logo" alt="Logo of the Brand" height="130" width="130"></a>
+        <a href="#"><img src="Images/Logo/BLUE (1).png" class="logo" alt="Logo of the Brand" height="130" width="130"></a>
         <div>
-            <ul id="navbar" style="list-style-type: none;">
+            <ul id="navbar" ng-class="{active: isMenuOpen}" style="list-style-type: none;">
                 <li><a class="active" href="home.html">Home</a></li>
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="blog.html">Blog</a></li>
@@ -23,85 +22,50 @@
                 <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
         </div>
+        <div class="menu-icon" ng-click="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </div>
     </section>
 
+    <!-- Hero Section -->
     <section id="hero">
-        <h4>Welcome to SummerTime Blues!</h4>
-        <h2>High Quality</h2>
-        <h1>Digital Art & Prints</h1>
-        <p>Holi offer 40% off + Additional surprises on first purchase</p>
-        <a href="shop.html"><button>Shop Now</button></a>
+        <h4>{{ hero.title }}</h4>
+        <h2>{{ hero.subtitle }}</h2>
+        <h1>{{ hero.mainText }}</h1>
+        <p>{{ hero.offer }}</p>
+        <a href="shop.html"><button>{{ hero.buttonText }}</button></a>
     </section>
 
+    <!-- Features Section -->
     <section id="feature" class="section-p1">
-
-        <div class="fe-box">
-            <img src="Images\Logo\13416130_5243860.jpg" style="height: 150px;width: 150px;">
-            <h5>Free Shipping</h5>
+        <div class="fe-box" ng-repeat="feature in features">
+            <img ng-src="{{ feature.imgSrc }}" style="height: 150px;width: 150px;">
+            <h5>{{ feature.title }}</h5>
         </div>
-
-        <div class="fe-box">
-            <img src="Images\Logo\19466810_6134225.jpg" style="height: 150px;width: 150px;">
-            <h5>Order Online</h5>
-        </div>
-
-        <div class="fe-box">
-            <img src="Images\Logo\12516923_4968837.jpg" style="height: 150px;width: 150px;">
-            <h5>Promotions</h5>
-        </div>
-
-        <div class="fe-box">
-            <img src="Images\Logo\10117945_4365502.jpg" style="height: 150px;width: 150px;">
-            <h5>Happy Selling</h5>
-        </div>
-
-        <div class="fe-box">
-            <img src="Images\Logo\12704338_5064484.jpg" style="height: 150px;width: 150px;">
-            <h5>Support</h5>
-        </div>
-
     </section>
 
-    <!-- <section>
-        <h3>Contact Us</h3>
-        <div>
-            <ul id="contact" style="list-style-type: none;">
-                <li><a href="https://www.instagram.com/blue22_____?igsh=MWwwcXJvMng2bDg3Zg==" target="_blank"><i class="fa-brands fa-instagram"></i></a>Follow our Artist on Instagram</li>
-                <li><i class="fa-brands fa-twitter"></i>Twitter</li>
-                <li><i class="fa-brands fa-pinterest"></i>Pinterest</li>
-                <li><i class="fa-brands fa-etsy"></i>Etsy</li>
-
-            </ul>
-        </div>
-        
-    </section> -->
-
+    <!-- Products Section -->
     <section id="product1" class="section-p1">
         <h2>Featured Products</h2>
         <p>Check out our featured collection</p>
         <div class="pro-container">
-            <div class="pro">
-                <img src="Images\Products\Prod1.png" alt="">
+            <div class="pro" ng-repeat="product in products">
+                <img ng-src="{{ product.imgSrc }}" alt="">
                 <div class="des">
-                    <span>Mitski</span>
-                    <h5>Short Hair Illustration</h5>
+                    <span>{{ product.artist }}</span>
+                    <h5>{{ product.title }}</h5>
                     <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star" ng-repeat="n in [1,2,3,4,5]"></i>
                     </div>
-                    <h4>Rs 540</h4>
+                    <h4>{{ product.price }}</h4>
                 </div>
                 <a href="#"><i class="fal fa-cart-shopping cart"></i></a>
             </div>
         </div>
-
     </section>
 
-
-    <script src="script.js"></script>
-
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
